@@ -20,6 +20,7 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        <link rel="canonical" href="http://localhost:3000" key="canonical" />
       </Head>
       <section className={utilStyles.headingMd}>
         <p>
