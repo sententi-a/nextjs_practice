@@ -14,7 +14,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id);
+  const postData = await getPostData(params?.id as string);
   return {
     props: {
       postData,
@@ -22,7 +22,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export default function Post({ postData }) {
+export default function Post({
+  postData,
+}: {
+  postData: { title: string; date: string; contentHTML: string };
+}) {
   return (
     <Layout home={false}>
       <Head>
